@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Remember to move the style into scss folder later */
+    /* Style for the main container */
+    .main-container {
+      display: flex;
+    }
+
+    /* Style for the button container */
+    .button-container {
+      background-color: #c0c0c0; /* Greyish silver background color */
+      border: 2px solid black; /* Black border */
+      padding: 10px; /* Padding around the buttons */
+      width: 25%; /* Adjusted width to make it smaller */
+      display: grid; /* Use grid to arrange buttons */
+      grid-template-columns: repeat(3, 1fr); /* Three columns */
+      gap: 8px; /* Gap between buttons */
+    }
+
+    /* Style for the buttons */
+    .my-button {
+      background-color: #808080; /* Grey background color */
+      color: #000; /* Black text color */
+      padding: 8px 16px; /* Padding inside the button */
+      border: 2px solid black; /* Black border */
+      border-radius: 4px; /* Optional: Add rounded corners */
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+
+    /* Style for the door and lightbulb container */
+    .door-lightbulb-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #door1 {
+      width: 300px;
+      height: 650px;
+      margin: 20px;
+    }
+
+    #lightbulb {
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      background-image: url('off_lightbulb.png'); /* Replace with the path to your off lightbulb image */
+      background-size: cover;
+    }
+
+    .button {
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="door-lightbulb-container">
+      <img src="door1.png" width="300" height="650" id="door1">
+      <div id="lightbulb"></div>
+    </div>
+    <div class="button-container">
+      <button class="my-button" id="b1" onclick="toggle1Value()">Button 1</button>
+      <button class="my-button" id="b2" onclick="toggle2Value()">Button 2</button>
+      <button class="my-button" id="b3" onclick="toggle3Value()">Button 3</button>
+      <button class="my-button" id="b4" onclick="toggle4Value()">Button 4</button>
+      <button class="my-button" id="b5" onclick="toggle5Value()">Button 5</button>
+      <button class="my-button" id="b6" onclick="toggle6Value()">Button 6</button>
+    </div>
+  </div>
+  <button class="button" onclick="checkAnswer(true)">True</button>
+  <button class="button" onclick="checkAnswer(false)">False</button>
+  <script>
+  // Function to change image from the door to the open door
+  function changeImage () {
+        var image = document.getElementById('door1')
+        if (image.src.match("door1.png")) {
+            image.src = "door1_Open.png"
+            image.alt = "Image 2";
+      } else {
+        image.src = "door1.png";
+        image.alt = "Image 1";
+        }
+    }
+
+  // Variable to keep track of the button value
+  var button1Value = 0;
+  var button2Value = 0;
+  var button3Value = 0;
+  var button4Value = 0;
+  var button5Value = 0;
+  var button6Value = 0;
+
+  // Function to toggle the button value
+  function toggle1Value() {
+    // Toggle between 0 and 1
+    button1Value = 1 - button1Value;
+  }
+
+  // Function to toggle the button value
+  function toggle2Value() {
+  // Toggle between 0 and 1
+  button2Value = 1 - button2Value;
+  }
+
+  // Function to toggle the button value
+  function toggle3Value() {
+  // Toggle between 0 and 1
+  button3Value = 1 - button3Value;
+  }
+
+  // Function to toggle the button value
+  function toggle4Value() {
+  // Toggle between 0 and 1
+  button4Value = 1 - button4Value;
+  }
+
+  // Function to toggle the button value
+  function toggle5Value() {
+  // Toggle between 0 and 1
+  button5Value = 1 - button5Value;
+  }
+
+  // Function to toggle the button value
+  function toggle6Value() {
+  // Toggle between 0 and 1
+  button6Value = 1 - button6Value;
+  }
+
+  function checkAnswer(isCorrect) {
+      if (isCorrect) {
+      document.getElementById('lightbulb').style.backgroundImage = "url('on_lightbulb.png')"; /* Replace with the path to your on lightbulb image */
+    } else {
+      alert("Incorrect answer. Try again!");
+    }
+  }
+</script>
+</body>
+</html>

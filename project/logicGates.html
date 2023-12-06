@@ -250,7 +250,7 @@
   }
 
   function openDoor() {
-    var doorImage = document.getElementById('door')
+    var doorImage = document.getElementById('door1')
     doorImage.src = 'door1_Open.png';
     doorImage.alt = 'Open Door';
   }
@@ -281,6 +281,18 @@
         button.style.backgroundColor = 'blue';
     }
 }
+  function checkAnswer() {
+    if (correctAnswer()) {
+        document.getElementById('lightbulb').style.backgroundImage = "url('on_lightbulb.png')";
+        openDoor();
+        alert("Correct! You can move on to the next level.");
+        // Add code here to proceed to the next level if needed
+    } else {
+        alert("Incorrect answer. Try again!");
+    }
+}
+
+
   
 </script>
 </body>

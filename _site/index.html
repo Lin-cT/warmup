@@ -48,9 +48,14 @@
 <body>
     <h1>Binary Project</h1>
     <div class="button-container">
-        <a href="#logic-gates" class="button">Logic Gates</a>
-        <a href="#binary-to-color" class="button">Binary to Color Converter</a>
-        <a href="#letters-to-binary" class="button">Letters to Binary Converter</a>
+        <button onclick="navigate('https://lin-ct.github.io/warmup/logicGates.html')" class="button"><a href="https://lin-ct.github.io/warmup/logicGates.html"></a>Logic Gates</button>
+        <button href="#binary-to-color" class="button">Binary to Color Converter</button>
+        <button href="#letters-to-binary" class="button">Letters to Binary Converter</button>
     </div>
 </body>
 </html>
+<script>
+    function navigate(url) {
+        window.location.href = url;
+    }
+</script>
